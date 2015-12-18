@@ -2,6 +2,8 @@
 *~
 *.tmp
 *.bak
+~*
+*.swp
 
 # Upload files
 */uploads/*

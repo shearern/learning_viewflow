@@ -91,3 +91,7 @@ Basic Bootstrap Steps
          browse to http://127.0.0.1:8040/admin
          
         
+Loading a Shell with Django
+---------------------------
+
+        python manage.py shell
