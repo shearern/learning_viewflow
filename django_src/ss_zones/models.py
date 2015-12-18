@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Device(models.Model):
+class SecurityDevice(models.Model):
     '''Represents a type of device that can be used in a security system'''
 
     title = models.CharField(max_length=128)
@@ -27,7 +27,7 @@ class SecurityComponent(models.Model):
     title = models.CharField(max_length=128)
     purpose = models.TextField(null=True)   # Long description of the purpose of this component
 
-    device = models.ForeignKey(Device)
+    device = models.ForeignKey(SecurityDevice)
 
     requires_power = models.BooleanField(default=False)
     volts_required = models.DecimalField(null=True, max_digits=5, decimal_places=1)
