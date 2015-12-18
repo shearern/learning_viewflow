@@ -11,7 +11,7 @@ Basic Bootstrap Steps
     
  2. Create an App
  
-        python manage.py startapp polls
+        python manage.py startapp ss_zones
     
  3. Add your app to project/settings.py (just the module name)
     And configure DB if you don't want to use sqlite3
@@ -26,7 +26,7 @@ Basic Bootstrap Steps
             'ss_zones',
         ) 
     
- 3. Start the model file (app/models.py)
+ 4. Start the model file (app/models.py)
    
         class SecurityDevice(models.Model):
             '''Represents a type of device that can be used in a security system'''
@@ -64,9 +64,30 @@ Basic Bootstrap Steps
             volts_supplied = models.DecimalField(null=True, max_digits=5, decimal_places=1)
             mamps_supplied = models.IntegerField(null=True)
             
- 4. Migrate the model to the database
+ 5. Migrate the model to the database
  
         python manage.py makemigrations
         python manage.py migrate --list
         python manage.py migrate
       
+ 6. Set super user password
+ 
+        python manage.py createsuperuser
+        
+ 7. Optionally register your new tables with the admin tool by editing app/admin.py
+ 
+        from django.contrib import admin
+        
+        from .models import SecurityDevice
+        from .models import SecurityComponent
+        
+        admin.site.register(SecurityDevice)
+        admin.site.register(SecurityComponent) 
+        
+ 8. Test login
+ 
+         python manage.py runserver 8040
+         
+         browse to http://127.0.0.1:8040/admin
+         
+        

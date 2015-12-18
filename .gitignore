@@ -3,6 +3,9 @@
 *.tmp
 *.bak
 
+# Upload files
+*/uploads/*
+
 # Database files
 *.sqlite3
 

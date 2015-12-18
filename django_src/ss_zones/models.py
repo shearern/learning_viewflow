@@ -17,8 +17,8 @@ class SecurityDevice(models.Model):
         ('indicator', 'indicator'),
     ])
 
-    manual = models.FileField(null=True)
-    picture = models.ImageField(null=True)
+    manual = models.FileField(null=True, upload_to='uploads')
+    picture = models.ImageField(null=True, upload_to='uploads')
 
 
 class SecurityComponent(models.Model):
